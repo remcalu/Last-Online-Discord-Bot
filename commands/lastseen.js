@@ -6,7 +6,7 @@ module.exports = {
         console.log('**Heres when users were last seen**');
         let text = [];
         for (let i = 0; i < list.length; i++) {
-            text.push(list[i].username + " - " + timeList[i]);
+            text.push(timeList[i] + " - " + list[i].username);
         }
         message.channel.send(text);
         console.log(text);
