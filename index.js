@@ -1,11 +1,9 @@
 const Discord = require('discord.js');
 const fs = require('fs');
-const {clear} = require('console');
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 
-const token = '';
 const prefix = '`';
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
 
@@ -80,4 +78,4 @@ client.on('message', message => {
     }
 });
 
-client.login(token);
+client.login(process.env.TOKEN);
