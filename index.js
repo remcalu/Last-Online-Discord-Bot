@@ -50,7 +50,7 @@ client.on('ready', () => {
 
         for (let i = 0; i < list.length; i++) {
             if (!(list[i].presence.status == "offline")) {
-                timeList[i] = "online";
+                timeList[i] = ":green_circle:";
                 firstOffline[i] = 1;
             }
             else if ((list[i].presence.status == "offline") && (firstOffline[i] == 1)) {
