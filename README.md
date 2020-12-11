@@ -1,4 +1,4 @@
-# CanadaComputers site Webscraper
+# Last Online Bot
 
 ## Author
 Remus Calugarescu
