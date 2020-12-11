@@ -1,17 +1,15 @@
 module.exports = {
     name: 'status',
-    description: "Checks status of users",
-    execute(message, args, list) {
-        message.channel.send('**Heres the list of currently active and inactive users**');
-        console.log('**Heres the list of currently active and inactive users**');
+    description: "Checks when all users were seen last",
+    execute(message, list, timeList) {
+        message.channel.send('**Heres a list of all users and when they were last seen**');
+        console.log('**Heres a list of all users and when they were last seen**');
         let text = [];
         for (let i = 0; i < list.length; i++) {
-            if (list[i].presence.status == "online") {
-                text.push(":green_circle: - " + list[i].username);
-            } else if (list[i].presence.status == "dnd") {
-                text.push(":red_circle: - " + list[i].username);
-            } else if (list[i].presence.status == "offline") {
-                text.push(":white_circle: - " + list[i].username);
+            if (list[i].nickname === null) {
+                text.push(timeList[i] + " - " + list[i].user.username);
+            } else {
+                text.push(timeList[i] + " - " + list[i].nickname);
             }
         }
         message.channel.send(text);
